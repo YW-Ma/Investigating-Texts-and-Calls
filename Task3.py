@@ -60,7 +60,7 @@ for call in calls:
         if marketer_pattern.match(call[1]):
             continue
         elif mobile_pattern.match(call[1]):
-            prefix.add(call[1][:5])
+            prefix.add(call[1][:4])
         elif area_pattern.match(call[1]):
             prefix.add(call[1][:call[1].find(')')+1])
             if call[1][:5] == '(080)':

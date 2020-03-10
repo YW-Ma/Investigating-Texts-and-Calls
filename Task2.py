@@ -30,9 +30,10 @@ for call in calls:
     # answering
     time_spent[call[1]] = time_spent.get(call[1], 0) + int(call[3])
 
-# sort
-results = sorted(time_spent.items(), reverse=True, key=lambda x:x[1])    
-longest = results[0]
+# sort => use max() instead, to achieve O(n)
+# results = sorted(time_spent.items(), reverse=True, key=lambda x:x[1])    
+number = max(time_spent, key=time_spent.get)
+time = time_spent[number]
 
 # print result
-print(f"{longest[0]} spent the longest time, {longest[1]} seconds, on the phone during September 2016.")
+print(f"{number} spent the longest time, {time} seconds, on the phone during September 2016.")
